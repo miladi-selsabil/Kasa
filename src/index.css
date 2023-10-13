@@ -26,3 +26,46 @@ text-decoration: none;
 padding: 10px;
 font-size: 24px;
 }
+.mm{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: #F6F6F6;
+    margin: 40px;
+    border-radius: 10px;
+}
+.card{
+  width: 350px;
+  background: linear-gradient(#FF6060 50%, black 176%, #fff 0%);
+  margin: 20px;
+  height: 350px;
+  border-radius: 10px;
+  position: relative;
+}
+.article{
+  position: absolute;
+  bottom: 30px;
+    left: 15px;
+}
+.article p{
+  color: white;
+}
+.banner{
+  text-align: center;
+}
+.banner img{
+  width: 1300px;
+  height: 223px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+footer{
+  background-color: black;
+}
+.footer-section {
+padding: 20px 0px;
+  text-align: center;
+}
+.footer-section p{
+  color: #fff;
+}
