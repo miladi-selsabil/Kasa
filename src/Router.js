@@ -8,6 +8,7 @@ import Logement from "./page/Logement"
 import Home from './page/Home'
 
 import "./index.css";
+import Card from "./components/Card";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: 'logement',
+        path: 'logement/:id',
         element: <Logement />,
       },
     ],

@@ -32,23 +32,28 @@ font-size: 24px;
   justify-content: space-around;
   background-color: #F6F6F6;
     margin: 40px;
-    border-radius: 10px;
+    border-radius: 10px; 
+     position: relative;
+
 }
 .card{
-  width: 350px;
-  background: linear-gradient(#FF6060 50%, black 176%, #fff 0%);
   margin: 20px;
-  height: 350px;
   border-radius: 10px;
+  width: 350px;
+  height: 350px;
   position: relative;
 }
-.article{
-  position: absolute;
-  bottom: 30px;
-    left: 15px;
+.card img{
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+
 }
-.article p{
+
+.card p{
   color: white;
+  position: absolute;
+  bottom: 0;
 }
 .banner{
   text-align: center;

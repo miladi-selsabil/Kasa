@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
 
-const Card = () => {
+const Detail = () => {
   const [logementData, setLogementData] = useState([]);
   const logements = "http://localhost:3000/logements.json";
 
@@ -25,21 +24,20 @@ const Card = () => {
     log();
   }, []);
 
-  
-
   return (
     <div>
-      <div className="mm">
+      <div>
         {logementData.map((item) => (
-          <NavLink className="card" key={item.id} to={`logement/${item.id}`}>
-              <p>{item.title}</p>
-              <img src={item.cover} alt="Cover" />
-          </NavLink>
+          <div className="log" key={item.id} to={`logement/${item.id}`}>
+            <img src={item.cover} alt="Cover" />
+            <p>{item.title}</p>
+            <p>{item.location}</p>
+
+            <img src={item.cover} alt="Cover" />
+          </div>
         ))}
       </div>
     </div>
   );
 };
-
-export default Card;
- 
+export default Detail;

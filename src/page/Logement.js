@@ -1,4 +1,6 @@
+import Detail from "../components/Details";
+
 function Logement() {
-  return <div>Welcome logement page</div>;
+  return <div><Detail /></div>;
 }
 export default Logement;
