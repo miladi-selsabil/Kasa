@@ -1,6 +1,12 @@
-import Detail from "../components/Details";
+import React from "react";
+import LogementDetail from "../components/Details";
 
 function Logement() {
-  return <div><Detail /></div>;
+  return (
+    <div>
+      <LogementDetail />
+    </div>
+  );
 }
+
 export default Logement;

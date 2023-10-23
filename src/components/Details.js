@@ -1,43 +1,44 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
-const Detail = () => {
-  const [logementData, setLogementData] = useState([]);
-  const logements = "http://localhost:3000/logements.json";
-
-  const log = async () => {
-    try {
-      const response = await fetch(logements, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-      const data = await response.json();
-      setLogementData(data);
-    } catch (error) {
-      console.log("error", error);
-    }
-  };
+const LogementDetail = () => {
+  const [logementDetail, setLogementDetail] = useState({});
+  const { id } = useParams(); 
 
   useEffect(() => {
-    log();
-  }, []);
+    const fetchLogementDetail = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:3000/logements/${id}.json`,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+
+        if (response.ok) {
+          const data = await response.json();
+          setLogementDetail(data);
+        } else {
+          console.error("Logement non trouvé");
+        }
+      } catch (error) {
+        console.log("error", error);
+      }
+    };
+
+    fetchLogementDetail();
+  }, [id]);
 
   return (
-    <div>
-      <div>
-        {logementData.map((item) => (
-          <div className="log" key={item.id} to={`logement/${item.id}`}>
-            <img src={item.cover} alt="Cover" />
-            <p>{item.title}</p>
-            <p>{item.location}</p>
-
-            <img src={item.cover} alt="Cover" />
-          </div>
-        ))}
-      </div>
+    <div className="logement-detail">
+      <h2>{logementDetail.title}</h2>
+      <img src={logementDetail.cover} alt="Cover" />
+      <p>Description : {logementDetail.description}</p>
     </div>
   );
 };
-export default Detail;
+
+export default LogementDetail;
