@@ -6,7 +6,6 @@ import Error from "./page/Error"
 import About from "./page/About"
 import Logement from "./page/Logement"
 import Home from './page/Home'
-
 import "./index.css";
 import Card from "./components/Card";
 

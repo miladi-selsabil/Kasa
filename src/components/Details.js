@@ -3,13 +3,13 @@ import { useParams } from "react-router-dom";
 
 const LogementDetail = () => {
   const [logementDetail, setLogementDetail] = useState({});
-  const { id } = useParams(); 
+  const { id } = useParams();
 
   useEffect(() => {
     const fetchLogementDetail = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/logements/${id}.json`,
+          `http://localhost:3002/logements.json/${id}`,
           {
             method: "GET",
             headers: {
