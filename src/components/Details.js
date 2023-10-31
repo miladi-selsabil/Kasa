@@ -3,40 +3,67 @@ import { useParams } from "react-router-dom";
 
 const LogementDetail = () => {
   const [logementDetail, setLogementDetail] = useState({});
+  const [descriptionVisible, setDescriptionVisible] = useState(false);
+  const [equipementsVisible, setEquipementsVisible] = useState(false); 
   const { id } = useParams();
 
   useEffect(() => {
     const fetchLogementDetail = async () => {
       try {
-        const response = await fetch(
-          `http://localhost:3002/logements.json/${id}`,
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
-
-        if (response.ok) {
-          const data = await response.json();
-          setLogementDetail(data);
-        } else {
-          console.error("Logement non trouvé");
-        }
+        const response = await fetch("http://localhost:3005/logements.json");
+        const logements = await response.json();
+        const logement = logements.find((item) => item.id === id);
+        setLogementDetail(logement);
       } catch (error) {
-        console.log("error", error);
+        console.error(
+          "Erreur lors de la récupération des données du logement : ",
+          error
+        );
       }
     };
 
     fetchLogementDetail();
   }, [id]);
 
+  const description = () => {
+    setDescriptionVisible(!descriptionVisible);
+  };
+const equipements = () => {
+  setEquipementsVisible(!equipementsVisible);
+};
   return (
     <div className="logement-detail">
-      <h2>{logementDetail.title}</h2>
       <img src={logementDetail.cover} alt="Cover" />
-      <p>Description : {logementDetail.description}</p>
+      <h2 className="title">{logementDetail.title}</h2>
+      <p className="location">{logementDetail.location}</p>
+      {logementDetail.tags && (
+        <div className="tags">
+            {logementDetail.tags.map((tag, index) => (
+              <p key={index}>{tag}</p>
+            ))}
+        </div>
+      )}
+      <p>
+        <button onClick={description}>
+          {descriptionVisible ? "Description >" : "Description   <"}
+        </button>
+      </p>
+      {descriptionVisible && <p> {logementDetail.description}</p>}
+
+      <p>
+        <button onClick={equipements}>
+          {equipementsVisible ? "Equipements >" : "Equipements <"}
+        </button>
+      </p>
+      {equipementsVisible && (
+        <div>
+          <ul>
+            {logementDetail.equipments.map((equipment, index) => (
+              <li key={index}>{equipment}</li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 };
