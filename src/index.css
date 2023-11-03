@@ -14,7 +14,8 @@ code {
 .header-section {
   display: flex;
   justify-content: space-between;
-  margin: 20px;
+  width: 90%;
+  margin: 0 auto;
 }
 .header-section nav{
       display: flex;
@@ -31,9 +32,10 @@ font-size: 24px;
   flex-wrap: wrap;
   justify-content: space-around;
   background-color: #F6F6F6;
-    margin: 40px;
-    border-radius: 10px; 
-     position: relative;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 10px; 
+  position: relative;
 
 }
 .card{
@@ -59,7 +61,8 @@ font-size: 24px;
   text-align: center;
 }
 .banner img{
-  width: 1300px;
+      width: 90%;
+        margin: 0 auto;
   height: 223px;
   border-radius: 10px;
   object-fit: cover;
@@ -85,9 +88,45 @@ padding: 20px 0px;
 .tags{
   display: flex;
 }
+.logement-detail{
+  width: 90%;
+    margin: 0 auto;
+}
+.logement-detail img{
+  width: 100%;
+}
 .logement-detail .title{
   color: #FF6060;
 }
 .logement-detail .location{
   color: #FF6060;
+}
+.logement-detail .btn-de{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.button-collapse{
+  background-color: #FF6060;
+  color: white;
+  border: none;
+  padding: 10px 20px 10px 10px;
+  border-radius: 10px;
+  width: 100%;
+ 
+}
+.bouton{
+  width: 40%;
+}
+.banner-home{
+  position: relative;
+}
+.txt-banner{
+    position: absolute;
+    bottom: 0;
+    color: white;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
 }

@@ -1,7 +1,13 @@
 import Card from "../components/Card"
+import BannerHome from "../components/BannerHome";
+
 function Home(){
-    return <div>
+    return (
+      <div>
+        <BannerHome />
         <Card />
-    </div>
+        
+      </div>
+    );
 }
 export default Home

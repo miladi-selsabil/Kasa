@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Collapse from "./Collapse";
 
 const LogementDetail = () => {
   const [logementDetail, setLogementDetail] = useState({});
-  const [descriptionVisible, setDescriptionVisible] = useState(false);
-  const [equipementsVisible, setEquipementsVisible] = useState(false); 
   const { id } = useParams();
 
   useEffect(() => {
     const fetchLogementDetail = async () => {
       try {
-        const response = await fetch("http://localhost:3005/logements.json");
+        const response = await fetch("http://localhost:3000/logements.json");
         const logements = await response.json();
         const logement = logements.find((item) => item.id === id);
         setLogementDetail(logement);
@@ -25,11 +24,19 @@ const LogementDetail = () => {
     fetchLogementDetail();
   }, [id]);
 
-  const description = () => {
-    setDescriptionVisible(!descriptionVisible);
-  };
+  
 const equipements = () => {
-  setEquipementsVisible(!equipementsVisible);
+  return (
+    logementDetail.equipements && (
+      <div>
+        <ul>
+          {logementDetail.equipements.map((equipement, index) => (
+            <li key={index}>{equipement}</li>
+          ))}
+        </ul>
+      </div>
+    )
+  )
 };
   return (
     <div className="logement-detail">
@@ -43,27 +50,10 @@ const equipements = () => {
             ))}
         </div>
       )}
-      <p>
-        <button onClick={description}>
-          {descriptionVisible ? "Description >" : "Description   <"}
-        </button>
-      </p>
-      {descriptionVisible && <p> {logementDetail.description}</p>}
-
-      <p>
-        <button onClick={equipements}>
-          {equipementsVisible ? "Equipements >" : "Equipements <"}
-        </button>
-      </p>
-      {equipementsVisible && (
-        <div>
-          <ul>
-            {logementDetail.equipments.map((equipment, index) => (
-              <li key={index}>{equipment}</li>
-            ))}
-          </ul>
-        </div>
-      )}
+      <div className="btn-de">
+     <Collapse title="description" content={logementDetail.description}/>
+     <Collapse title="equipement" content={equipements} />
+     </div>
     </div>
   );
 };

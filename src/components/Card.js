@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Card = () => {
   const [logementData, setLogementData] = useState([]);
-  const logements = "http://localhost:3005/logements.json";
+  const logements = "http://localhost:3000/logements.json";
 
   const log = async () => {
     try {

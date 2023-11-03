@@ -6,7 +6,8 @@ const BannerHome = () => {
 
   return (
     <div>
-      <Banner image={Imag} />
+      <Banner className="banner-home" image={Imag} />
+      <h1 className="txt-banner">Chez vous, pârtout ailleurs</h1>
     </div>
   );
 };
