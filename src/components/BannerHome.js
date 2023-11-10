@@ -5,9 +5,10 @@ import Banner from "./Banner";
 const BannerHome = () => {
 
   return (
-    <div>
+    <div className="bn">
       <Banner className="banner-home" image={Imag} />
-      <h1 className="txt-banner">Chez vous, pârtout ailleurs</h1>
+      <h1 className="txt-banner">Chez vous, partout ailleurs</h1>
+      <div className="overlay"></div>
     </div>
   );
 };

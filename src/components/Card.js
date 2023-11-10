@@ -28,16 +28,18 @@ const Card = () => {
   
 
   return (
-    <div>
       <div className="mm">
         {logementData.map((item) => (
           <NavLink className="card" key={item.id} to={`logement/${item.id}`}>
-              <p>{item.title}</p>
-              <img src={item.cover} alt="Cover" />
+            <p>{item.title}</p>
+            <img src={item.cover} alt="Cover" />
+             <div className="over"></div>
           </NavLink>
-        ))}
+        ))}       
+
       </div>
-    </div>
+      
+  
   );
 };
 

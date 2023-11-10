@@ -24,13 +24,13 @@ const LogementDetail = () => {
     fetchLogementDetail();
   }, [id]);
 
-  
+ 
 const equipements = () => {
   return (
-    logementDetail.equipements && (
+    logementDetail.equipments && (
       <div>
         <ul>
-          {logementDetail.equipements.map((equipement, index) => (
+          {logementDetail.equipments.map((equipement, index) => (
             <li key={index}>{equipement}</li>
           ))}
         </ul>
@@ -45,15 +45,15 @@ const equipements = () => {
       <p className="location">{logementDetail.location}</p>
       {logementDetail.tags && (
         <div className="tags">
-            {logementDetail.tags.map((tag, index) => (
-              <p key={index}>{tag}</p>
-            ))}
+          {logementDetail.tags.map((tag, index) => (
+            <p key={index}>{tag}</p>
+          ))}
         </div>
       )}
       <div className="btn-de">
-     <Collapse title="description" content={logementDetail.description}/>
-     <Collapse title="equipement" content={equipements} />
-     </div>
+        <Collapse title="Description" content={logementDetail.description} />
+        <Collapse title="Equipement" content={equipements()} />
+      </div>
     </div>
   );
 };
