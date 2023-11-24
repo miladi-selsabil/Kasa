@@ -1,10 +1,10 @@
 import Card from "../components/Card"
-import BannerHome from "../components/BannerHome";
-
+import Banner from "../components/Banner";
+import Image from "../assets/source.png"
 function Home(){
     return (
       <div>
-        <BannerHome />
+        <Banner image={Image} texte={"Chez vous, partout et ailleurs"} />
         <Card />
         
       </div>

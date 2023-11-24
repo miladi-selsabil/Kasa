@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Collapse from "./Collapse";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import FontAwesomeIcon
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 const LogementDetail = () => {
   const [logementDetail, setLogementDetail] = useState({});
   const { id } = useParams();
@@ -9,7 +10,7 @@ const LogementDetail = () => {
   useEffect(() => {
     const fetchLogementDetail = async () => {
       try {
-        const response = await fetch("http://localhost:3000/logements.json");
+        const response = await fetch("http://localhost:3002/logements.json");
         const logements = await response.json();
         const logement = logements.find((item) => item.id === id);
         setLogementDetail(logement);
@@ -24,32 +25,59 @@ const LogementDetail = () => {
     fetchLogementDetail();
   }, [id]);
 
- 
-const equipements = () => {
-  return (
-    logementDetail.equipments && (
-      <div>
-        <ul>
-          {logementDetail.equipments.map((equipement, index) => (
-            <li key={index}>{equipement}</li>
-          ))}
-        </ul>
-      </div>
-    )
-  )
-};
+  const equipements = () => {
+    return (
+      logementDetail.equipments && (
+        <div>
+          <ul>
+            {logementDetail.equipments.map((equipement, index) => (
+              <li key={index}>{equipement}</li>
+            ))}
+          </ul>
+        </div>
+      )
+    );
+  };
+  const renderRatingStars = () => {
+    const filledStars = Array.from(
+      { length: logementDetail.rating },
+      (index) => (
+        <FontAwesomeIcon
+          key={index}
+          icon={faStar}
+          style={{ color: "#ff6060" }}
+        />
+      )
+    );
+    const emptyStars = Array.from(
+      { length: 5 - logementDetail.rating },
+      (index) => (
+        <FontAwesomeIcon
+          key={index + logementDetail.rating}
+          icon={faStar}
+          style={{ color: "#ccc" }}
+        />
+      )
+    );
+    return [...filledStars, ...emptyStars];
+  };
   return (
     <div className="logement-detail">
       <img src={logementDetail.cover} alt="Cover" />
       <h2 className="title">{logementDetail.title}</h2>
       <p className="location">{logementDetail.location}</p>
-      {logementDetail.tags && (
-        <div className="tags">
-          {logementDetail.tags.map((tag, index) => (
-            <p key={index}>{tag}</p>
-          ))}
-        </div>
-      )}
+      <div className="details_star">
+        {logementDetail.tags && (
+          <div className="tags">
+            {logementDetail.tags.map((tag, index) => (
+              <p key={index}>{tag}</p>
+            ))}
+          </div>
+        )}
+        {logementDetail.rating && (
+          <div className="star">{renderRatingStars()}</div>
+        )}
+      </div>
       <div className="btn-de">
         <Collapse title="Description" content={logementDetail.description} />
         <Collapse title="Equipement" content={equipements()} />

@@ -1,7 +1,8 @@
 body {
   margin: 0;
-font-family: 'Montserrat', sans-serif;
-  font-family: 'Shrikhand', serif;  -webkit-font-smoothing: antialiased;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Shrikhand', serif;
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
@@ -9,63 +10,67 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 .header-section {
   display: flex;
   justify-content: space-between;
   width: 90%;
   margin: 45px auto;
 }
-.header-section nav{
-      display: flex;
-      align-items: center;
+
+.header-section nav {
+  display: flex;
+  align-items: center;
 }
-.header-section nav a{
-color: #FF6060;
-text-decoration: none;
-padding: 10px;
-font-size: 24px;
-font-weight: 500;
-font-family: Montserrat;
+
+.header-section nav a {
+  color: #ff6060;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 24px;
+  font-weight: 500;
+  font-family: Montserrat;
 }
-nav a:active {
-  text-decoration: underline #FF6060;
-  font-weight: bold;
-}
-.mm{
+
+
+
+.mm {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
   width: 90%;
   margin: 50px auto;
-  border-radius: 10px; 
+  border-radius: 10px;
   position: relative;
-
 }
-.card{
+
+.card {
   margin: 20px;
   border-radius: 10px;
   width: 350px;
   height: 350px;
   position: relative;
 }
-.card img{
+
+.card img {
   width: 350px;
   height: 350px;
   object-fit: cover;
   border-radius: 10px;
-
 }
 
-.card p{
+.card p {
   color: white;
   position: absolute;
   bottom: 20px;
+  z-index: 1;
   left: 20px;
-  font-family:  Montserrat;
+  font-family: Montserrat;
   font-weight: 500;
   font-size: 18px;
 }
+
 .bn {
   text-align: center;
   position: relative;
@@ -73,26 +78,47 @@ nav a:active {
   width: 100%;
 }
 
-.bn .banner img {
+.wrapper {
+  justify-content: center;
+  position: relative;
+  width: 90%;
+  margin: auto;
+}
+
+.wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 229px;
+  background-color: rgba(131, 126, 126, 0.3);
+  pointer-events: none;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.wrapper img {
   border-radius: 10px;
   object-fit: cover;
-  display: block;
-  width: 90%;
+  width: 100%;
   height: 229px;
 }
-.over{
+
+.over {
   position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    border-radius: 10px;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.1);
-    pointer-events: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 10px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .overlay {
   position: absolute;
   top: 0;
@@ -106,88 +132,213 @@ nav a:active {
   justify-content: center;
   align-items: center;
 }
-footer{
+
+footer {
   background-color: black;
 }
+
 .footer-section {
-padding: 20px 0px;
+  padding: 20px 0px;
   text-align: center;
-    font-family: Montserrat;
+  font-family: Montserrat;
 }
-.footer-section p{
+
+.footer-section p {
   color: #fff;
 }
-.tags p{
-  background: #FF6060;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 14px;
-    color: white;
-    margin-right: 10px;
-    font-family: Montserrat;
-    margin-bottom: 40px;
+
+.tags p {
+  background: #ff6060;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  color: white;
+  margin-right: 10px;
+  font-family: Montserrat;
+  margin-bottom: 40px;
 }
-.tags{
+
+.tags {
   display: flex;
 }
-.logement-detail{
+
+.logement-detail {
   width: 90%;
-    margin: 0 auto;
+  margin: 0 auto;
 }
-.logement-detail img{
+
+.logement-detail img {
   width: 100%;
   height: 400px;
-    object-fit: cover;
-    border-radius: 20px;
+  object-fit: cover;
+  border-radius: 20px;
 }
-.logement-detail .title{
-  color: #FF6060;
+
+.logement-detail .title {
+  color: #ff6060;
   font-family: Montserrat;
   font-weight: 500;
-  font-size:36px;
+  font-size: 36px;
   margin-bottom: 0px;
 }
-.logement-detail .location{
-  color: #FF6060;
+
+.logement-detail .location {
+  color: #ff6060;
   font-family: Montserrat;
-    font-weight: 500;
-    font-size: 18px;
-    margin-top: 0px;
+  font-weight: 500;
+  font-size: 18px;
+  margin-top: 0px;
 }
-.logement-detail .btn-de{
+
+.logement-detail .btn-de {
   display: flex;
   width: 100%;
   justify-content: space-between;
   margin-bottom: 50px;
 }
-.button-collapse{
-  background-color: #FF6060;
+
+.button-collapse {
+  background-color: #ff6060;
   color: white;
   border: none;
   font-family: Montserrat;
-    font-weight: 500;
-    font-size: 18px;
+  font-weight: 500;
+  font-size: 18px;
   text-align: left;
   padding: 10px 20px 10px 10px;
   border-radius: 10px;
   width: 100%;
- 
 }
-.bouton{
+
+.txt-content {
+  background: #F6F6F6;
+  color: #ff6060;
+  font-family: Montserrat;
+  font-size: 18px;
+  border-radius: 0px 0px 10px 10px;
+  padding: 15px;
+}
+
+.bouton {
   width: 40%;
 }
-.banner-home{
+
+.banner-home {
   position: relative;
 }
-.txt-banner{
-    position: absolute;
-    bottom: 0;
-    color: white;
-    left: 0;
-    font-size: 48px;
-    font-family: Montserrat;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    font-weight: 500;
+
+.txt-banner {
+  position: absolute;
+  bottom: 0;
+  color: white;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  align-items: center;
+  font-size: 48px;
+  font-family: Montserrat;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  font-weight: 500;
 }
+
+.btn-about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-about .bouton {
+  margin-top: 30px;
+}
+
+.btn-about .bouton:last-child {
+  margin-bottom: 30px;
+}
+
+.button-collapse .btn-text {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.details_star {
+  display: flex;
+  justify-content: space-between;
+}
+
+.details_star .star {
+  display: flex;
+  align-items: center;
+  /* justify-content: stretch; */
+  /* width: 50px; */
+  font-size: 19px;
+}
+.active {
+  text-decoration:underline;
+}
+.error{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ff6060;
+  font-family: Montserrat;
+}
+.error h2 {
+  font-size: 288px;
+  margin: 0;
+}
+.error .txt-error {
+  font-size: 36px;
+  font-weight: 51px;
+}
+.link a{
+      color: #ff6060;
+      font-size: 18px;
+}
+@media screen and (max-width: 768px) {
+
+      .header-section img{
+        width: 145px;
+      }
+      .header-section nav a{
+        font-size: 12px;
+      }
+      .txt-banner{
+        font-size: 24px;
+      }
+      .wrapper img {
+        height: 111px;
+      }
+      .wrapper::after {
+        height: 111px;
+      }
+      .details_star {
+        display: flex;
+        flex-direction: column;
+      }
+      .logement-detail .btn-de{
+        flex-direction: column;
+      }
+      .bouton {
+        width: 100%;
+        margin-top: 20px;
+      }
+        .btn-about {
+     
+          width: 90%;
+          margin: auto;
+        }
+        .error h2 {
+        font-size: 96px;
+      }
+      .error .txt-error {
+        font-size: 18px;
+        font-weight: 51px;
+      }
+      .link a{
+          color: #ff6060;
+          font-size: 14px;
+      }
+    }
