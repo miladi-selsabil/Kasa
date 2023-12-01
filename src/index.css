@@ -135,6 +135,7 @@ code {
 
 footer {
   background-color: black;
+
 }
 
 .footer-section {
@@ -297,6 +298,74 @@ footer {
       color: #ff6060;
       font-size: 18px;
 }
+.carousel {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.carousel-container {
+  display: flex;
+  overflow: hidden;
+}
+
+.carousel img {
+  width: 100%;
+  display: block;
+}
+
+.carousel-btn-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  right: 0;
+  font-size: 35px;
+  color: white;
+}
+.carousel-btn-left {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 35px;
+  color: white;
+}
+
+.slide-number {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+}
+.logement-detail .host-img{
+  width: 64px;
+  height: 64px;
+  border-radius: 67%;
+}
+.logement-detail .host-section{
+  display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.logement-detail .host-section h4{
+  font-family: Montserrat;
+  color: #ff6060;
+  font-size: 18px;
+  font-weight: 500;
+  width: 50%;
+}
+.logement-detail .info{
+  display: flex;
+  justify-content: space-between;
+}
 @media screen and (max-width: 768px) {
 
       .header-section img{
@@ -341,4 +410,25 @@ footer {
           color: #ff6060;
           font-size: 14px;
       }
+                    
+      .logement-detail .location {
+        margin-bottom: 0px;
+        }
+      .tags p{
+        margin-bottom: 20px;
+        }
+      .logement-detail .title {
+        margin-top: 15px;
+      }
+      .header-section {
+        margin: 30px auto;
+      }
+      .logement-detail img {
+        height: 255px;}
+                footer {
+                  background-color: black;
+                  position: fixed;
+                  bottom: 0;
+                  width: 100%;
+                }
     }

@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Collapse from "./Collapse";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import FontAwesomeIcon
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; 
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+import Carousel from "./Carousel";
+
+const LOGEMENTS_URL = "http://localhost:3000/logements.json";
+
 const LogementDetail = () => {
   const [logementDetail, setLogementDetail] = useState({});
   const { id } = useParams();
@@ -10,7 +14,7 @@ const LogementDetail = () => {
   useEffect(() => {
     const fetchLogementDetail = async () => {
       try {
-        const response = await fetch("http://localhost:3002/logements.json");
+        const response = await fetch(LOGEMENTS_URL);
         const logements = await response.json();
         const logement = logements.find((item) => item.id === id);
         setLogementDetail(logement);
@@ -63,8 +67,20 @@ const LogementDetail = () => {
   };
   return (
     <div className="logement-detail">
-      <img src={logementDetail.cover} alt="Cover" />
-      <h2 className="title">{logementDetail.title}</h2>
+      <Carousel images={logementDetail.pictures || []} />
+      <div className="info">
+        <h2 className="title">{logementDetail.title}</h2>
+        {logementDetail.host && (
+          <div className="host-section">
+            <h4>{logementDetail.host.name}</h4>
+            <img
+              className="host-img"
+              src={logementDetail.host.picture}
+              alt={logementDetail.host.name}
+            />
+          </div>
+        )}
+      </div>
       <p className="location">{logementDetail.location}</p>
       <div className="details_star">
         {logementDetail.tags && (
@@ -78,6 +94,7 @@ const LogementDetail = () => {
           <div className="star">{renderRatingStars()}</div>
         )}
       </div>
+
       <div className="btn-de">
         <Collapse title="Description" content={logementDetail.description} />
         <Collapse title="Equipement" content={equipements()} />

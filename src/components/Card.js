@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+const LOGEMENTS_URL = "http://localhost:3000/logements.json";
 
 const Card = () => {
   const [logementData, setLogementData] = useState([]);
-  const logements = "http://localhost:3000/logements.json";
 
   const log = async () => {
     try {
-      const response = await fetch(logements, {
+      const response = await fetch(LOGEMENTS_URL, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
