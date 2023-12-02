@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Collapse from "./Collapse";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; 
+import Collapse from "./Collapse.js";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-import Carousel from "./Carousel";
-
-const LOGEMENTS_URL = "http://localhost:3000/logements.json";
+import Carousel from "./Carousel.js";
+import { LOGEMENTS_URL } from "../config.js";
 
 const LogementDetail = () => {
   const [logementDetail, setLogementDetail] = useState({});

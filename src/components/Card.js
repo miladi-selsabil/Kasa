@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-const LOGEMENTS_URL = "http://localhost:3000/logements.json";
+import { LOGEMENTS_URL } from "../config.js";
 
 const Card = () => {
   const [logementData, setLogementData] = useState([]);

@@ -5,7 +5,7 @@ import Banner from "../components/Banner";
 import "./../index.css";
 function About() {
   return (
-    <div>
+    <div className="container">
       <Banner image={Image} />
       <div className="btn-about">
         <Collapse

@@ -13,21 +13,14 @@ const Collapse = (props) => {
   return (
     <div className="bouton">
       <button className="button-collapse" onClick={toggleOpen}>
-        {openVisible ? (
-          <p className="btn-text">
-            {props.title}{" "}
-            <span>
-              <FontAwesomeIcon icon={faChevronDown} />
-            </span>
-          </p>
-        ) : (
-          <p className="btn-text">
-            {props.title}{" "}
-            <span>
-              <FontAwesomeIcon icon={faChevronUp} />
-            </span>
-          </p>
-        )}
+        <p className="btn-text">
+          {props.title}
+          {openVisible ? (
+            <FontAwesomeIcon icon={faChevronDown} />
+          ) : (
+            <FontAwesomeIcon icon={faChevronUp} />
+          )}
+        </p>
       </button>
       {openVisible && <div className="txt-content">{props.content}</div>}
     </div>

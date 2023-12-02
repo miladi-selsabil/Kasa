@@ -1,9 +1,9 @@
 import React from "react";
-import LogementDetail from "../components/Details";
+import LogementDetail from "../components/LogementDetails";
 
 function Logement() {
   return (
-    <div>
+    <div className="container">
       <LogementDetail />
     </div>
   );

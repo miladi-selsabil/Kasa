@@ -3,7 +3,7 @@ import Footer from "../components/Footer"
 import { Outlet } from "react-router"
 function layout() {
   return (
-      <div>
+      <div >
         <Header />
         <Outlet />
         <Footer />

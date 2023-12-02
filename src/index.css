@@ -51,6 +51,7 @@ code {
   width: 350px;
   height: 350px;
   position: relative;
+  
 }
 
 .card img {
@@ -135,11 +136,14 @@ code {
 
 footer {
   background-color: black;
-
+background-color: black;
+   display: flex;
+ justify-content: center;
+align-items: center;  
+    height: 209px;
 }
 
 .footer-section {
-  padding: 20px 0px;
   text-align: center;
   font-family: Montserrat;
 }
@@ -227,7 +231,9 @@ footer {
 .banner-home {
   position: relative;
 }
-
+.btn-about .bouton {
+  width: 70%;
+}
 .txt-banner {
   position: absolute;
   bottom: 0;
@@ -276,28 +282,34 @@ footer {
   /* width: 50px; */
   font-size: 19px;
 }
+
 .active {
-  text-decoration:underline;
+  text-decoration: underline;
 }
-.error{
+
+.error {
   display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #ff6060;
+  flex-direction: column;
+  align-items: center;
+  color: #ff6060;
   font-family: Montserrat;
 }
+
 .error h2 {
   font-size: 288px;
   margin: 0;
 }
+
 .error .txt-error {
   font-size: 36px;
   font-weight: 51px;
 }
-.link a{
-      color: #ff6060;
-      font-size: 18px;
+
+.link a {
+  color: #ff6060;
+  font-size: 18px;
 }
+
 .carousel {
   position: relative;
   width: 100%;
@@ -326,6 +338,7 @@ footer {
   font-size: 35px;
   color: white;
 }
+
 .carousel-btn-left {
   position: absolute;
   top: 50%;
@@ -344,91 +357,140 @@ footer {
   left: 50%;
   transform: translateX(-50%);
   font-size: 14px;
+      font-family: 'Montserrat';
+        color: white;
 }
-.logement-detail .host-img{
+
+.logement-detail .host-img {
   width: 64px;
   height: 64px;
   border-radius: 67%;
 }
-.logement-detail .host-section{
+
+.logement-detail .host-section {
   display: flex;
-    align-items: center;
-    justify-content: end;
+  align-items: center;
+  justify-content: end;
 }
-.logement-detail .host-section h4{
+
+.logement-detail .host-section h4 {
   font-family: Montserrat;
   color: #ff6060;
   font-size: 18px;
   font-weight: 500;
   width: 50%;
 }
-.logement-detail .info{
+
+.logement-detail .info {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
+
 @media screen and (max-width: 768px) {
 
-      .header-section img{
-        width: 145px;
-      }
-      .header-section nav a{
-        font-size: 12px;
-      }
-      .txt-banner{
-        font-size: 24px;
-      }
-      .wrapper img {
-        height: 111px;
-      }
-      .wrapper::after {
-        height: 111px;
-      }
-      .details_star {
-        display: flex;
-        flex-direction: column;
-      }
-      .logement-detail .btn-de{
-        flex-direction: column;
-      }
-      .bouton {
-        width: 100%;
-        margin-top: 20px;
-      }
-        .btn-about {
-     
-          width: 90%;
-          margin: auto;
-        }
-        .error h2 {
-        font-size: 96px;
-      }
-      .error .txt-error {
-        font-size: 18px;
-        font-weight: 51px;
-      }
-      .link a{
-          color: #ff6060;
-          font-size: 14px;
-      }
-                    
-      .logement-detail .location {
-        margin-bottom: 0px;
-        }
-      .tags p{
-        margin-bottom: 20px;
-        }
-      .logement-detail .title {
-        margin-top: 15px;
-      }
-      .header-section {
-        margin: 30px auto;
-      }
-      .logement-detail img {
-        height: 255px;}
-                footer {
-                  background-color: black;
-                  position: fixed;
-                  bottom: 0;
-                  width: 100%;
-                }
+  .header-section img {
+    width: 145px;
+  }
+
+  .header-section nav a {
+    font-size: 12px;
+  }
+
+  .txt-banner {
+    font-size: 24px;
+  }
+
+  .wrapper img {
+    height: 111px;
+  }
+
+  .wrapper::after {
+    height: 111px;
+  }
+
+  .details_star {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logement-detail .btn-de {
+    flex-direction: column;
+  }
+
+  .bouton {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .btn-about {
+
+    width: 90%;
+    margin: auto;
+  }
+
+  .error h2 {
+    font-size: 96px;
+  }
+  .error {
+    height: 69vh;
+    justify-content: space-evenly;
+  }
+.error .txt-error {
+   font-size: 20px;
+    font-weight: 51px;
+  text-align: center;
     }
+  .error .txt-error {
+    font-size: 16px;
+    font-weight: 51px;
+  }
+
+  .link a {
+    color: #ff6060;
+    font-size: 14px;
+  }
+
+  .logement-detail .location {
+    margin-bottom: 0px;
+  }
+
+  .tags p {
+    margin-bottom: 20px;
+       display: flex;
+  align-items: center;
+  }
+
+  .logement-detail .title {
+    margin-top: 15px;
+  font-size: 20px;
+  }
+ .card {
+    height: 250px;
+   width: 300px;
+   }
+   .card img{
+   height: 250px;
+   width: 300px;
+   }
+  .header-section {
+    margin: 30px auto;
+  }
+
+  .logement-detail img {
+    height: 255px;
+  }
+.btn-about .bouton{
+  width: 100%;
+}
+  footer {
+    background-color: black;
+  height: 200px;
+  }
+  .logement-detail .host-section h4 {
+   font-size: 14px;
+        }
+ .container{
+       height: 85vh;
+ }
+}
