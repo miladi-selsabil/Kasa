@@ -176,7 +176,7 @@ My role was to develop the front-end of the application, using React components,
 
 ## Author:
 
-**Arthur Blanc**: [**GitHub**](https://github.com/miladi-selsabil) 
+**Selsabil Miladi**: [**GitHub**](https://github.com/miladi-selsabil) 
 
 ## Mockups:
 
